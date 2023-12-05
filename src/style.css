@@ -6,7 +6,7 @@
 
 h2{
   margin-bottom: 5px;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
 }
 
 
@@ -15,6 +15,10 @@ h2{
 }
 .justify-center{
   justify-content: center;
+}
+
+.justify-right{
+  justify-content: flex-end;
 }
 
 .gap-20{
@@ -46,6 +50,10 @@ div.foodContainer, div.favContainer{
   justify-content:center;
   margin: 25px 0;
 }
+
+div#container, div#favorites{
+  margin-top: 20px;
+}
 /* Recipe Card */
 .recipe{
   width: fit-content;
@@ -54,9 +62,9 @@ div.foodContainer, div.favContainer{
   flex-direction: column;
   overflow: auto;
 }
-.recipe h2{
+/* .recipe h2{
   width: fit-content;
-}
+} */
 
 .recipe img{
   width: 400px;
@@ -65,7 +73,37 @@ div.foodContainer, div.favContainer{
   cursor: pointer;
 }
 
+.recipe .recipe-card {
+  position: relative;
+  width: 100%;
+}
 
+.recipe .recipe-card img {
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+.recipe .recipe-card:hover img {
+  filter: brightness(50%);
+}
+
+.recipe .recipe-card .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.recipe .recipe-card:hover .title {
+  opacity: 1;
+}
 
 
 
@@ -90,9 +128,10 @@ div.foodContainer, div.favContainer{
 }
 .location{
   font-size: 14px;
-  color: gray;
+  color: white;
   gap: 10px;
 }
+
 
 
 /* Modal Styling */
