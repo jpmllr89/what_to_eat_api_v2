@@ -41,7 +41,13 @@ const htmlTemplates = {
   modal: (htmlData, htmlIngredients) => {
     return `<div class='recipe modal' id="modal${idCounter}">
               <div class="modal-display">
-                <div class="modal-header"><h2>${htmlData.meal}</h2><i data-close class="fa fa-x"></i></div>
+                <div class="modal-header">
+                  <div class="title">
+                    <h2>${htmlData.meal}</h2>
+                    <div class="row location"><i class="fa fa-globe"></i><span>${htmlData.area}</span></div>
+                  </div>
+                  <i data-close class="fa fa-x"></i>
+                </div>
                 <div class="modal-body">
                   <img src="${htmlData.thumb}" alt="Meal Thumbnail">
                   <div class="directionsBlock">
