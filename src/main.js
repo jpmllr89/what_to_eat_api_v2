@@ -26,20 +26,28 @@ const recipeCounts = {
 const htmlTemplates = {
   recipe: (htmlData) => {
     return `<div class='recipe' id=${idCounter}>
-              <div class="row justify-between align-center">
+              <div class="recipe-card">
+                <img data-open="modal${idCounter}" src="${htmlData.thumb}" alt="Meal Thumbnail">
                 <div class="title">
                   <h2>${htmlData.meal}</h2>
                   <div class="row location"><i class="fa fa-globe"></i><span>${htmlData.area}</span></div>
                 </div>
+              </div>
+              <div class="row justify-right align-center">
                 <i class="fa fa-heart" id="add"></i>
               </div>
-              <img data-open="modal${idCounter}" src="${htmlData.thumb}" alt="Meal Thumbnail">
             </div>`
   },
   modal: (htmlData, htmlIngredients) => {
     return `<div class='recipe modal' id="modal${idCounter}">
               <div class="modal-display">
-                <div class="modal-header"><h2>${htmlData.meal}</h2><i data-close class="fa fa-x"></i></div>
+                <div class="modal-header">
+                  <div class="title">
+                    <h2>${htmlData.meal}</h2>
+                    <div class="row location"><i class="fa fa-globe"></i><span>${htmlData.area}</span></div>
+                  </div>
+                  <i data-close class="fa fa-x"></i>
+                </div>
                 <div class="modal-body">
                   <img src="${htmlData.thumb}" alt="Meal Thumbnail">
                   <div class="directionsBlock">

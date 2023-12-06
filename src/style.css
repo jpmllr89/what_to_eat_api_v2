@@ -1,3 +1,7 @@
+body{
+  max-height: 100vh;
+}
+
 #main{
   display:flex;
   gap: 50px;
@@ -5,8 +9,10 @@
 }
 
 h2{
+  margin-top: 0;
   margin-bottom: 5px;
-  word-wrap: break-word;
+  width: fit-content
+  /* word-wrap: break-word; */
 }
 
 
@@ -15,6 +21,10 @@ h2{
 }
 .justify-center{
   justify-content: center;
+}
+
+.justify-right{
+  justify-content: flex-end;
 }
 
 .gap-20{
@@ -46,6 +56,23 @@ div.foodContainer, div.favContainer{
   justify-content:center;
   margin: 25px 0;
 }
+
+div#container, div#favorites{
+  margin-top: 20px;
+  max-height: 78vh;
+  overflow: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: black;
+  overflow-x: hidden;
+}
+
+div#container::-webkit-scrollbar, 
+div#favorites::-webkit-scrollbar, 
+.directionsBlock::-webkit-scrollbar,
+.ingredientsContainer::-webkit-scrollbar,
+.instructionsContainer::-webkit-scrollbar{
+  display: none;
+}
 /* Recipe Card */
 .recipe{
   width: fit-content;
@@ -53,10 +80,11 @@ div.foodContainer, div.favContainer{
   flex:1;
   flex-direction: column;
   overflow: auto;
+  margin-top: 20px;
 }
-.recipe h2{
+/* .recipe h2{
   width: fit-content;
-}
+} */
 
 .recipe img{
   width: 400px;
@@ -65,7 +93,37 @@ div.foodContainer, div.favContainer{
   cursor: pointer;
 }
 
+.recipe .recipe-card {
+  position: relative;
+  width: 100%;
+}
 
+.recipe .recipe-card img {
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+.recipe .recipe-card:hover img {
+  filter: brightness(50%);
+}
+
+.recipe .recipe-card .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.recipe .recipe-card:hover .title {
+  opacity: 1;
+}
 
 
 
@@ -90,9 +148,10 @@ div.foodContainer, div.favContainer{
 }
 .location{
   font-size: 14px;
-  color: gray;
+  color: white;
   gap: 10px;
 }
+
 
 
 /* Modal Styling */
@@ -117,6 +176,7 @@ div.foodContainer, div.favContainer{
   justify-content: center;
   /* width: 65%; */
   align-items: center;
+  margin-top: 0;
 }
 
 .modal-display{
@@ -136,7 +196,7 @@ div.foodContainer, div.favContainer{
   z-index: 2;
 }
 
-.modal-header i{
+.modal-header i[data-close]{
   font-size: 20px;
   cursor: pointer;
 }
@@ -145,19 +205,25 @@ div.foodContainer, div.favContainer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding-bottom: 10px;
+}
+
+.modal-header .title .location{
+  font-size: 14px;
+  color: black;
+  gap: 10px;
 }
 
 .modal-body{
-  height: 500px;
+  height: 100%;
   display: flex;
-  gap: 50px;
+  gap: 20px;
   overflow: auto;
 }
 
 .modal-body img{
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -165,8 +231,12 @@ div.foodContainer, div.favContainer{
 .directionsBlock{
   display: flex;
   gap: 30px;
-  overflow: auto;
+  max-height: 80%;
 }
 
-
+.modal-display .ingredientsContainer,
+.modal-display .instructionsContainer{
+  max-height: 100%;
+  overflow: auto;
+}
 
