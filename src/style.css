@@ -70,7 +70,8 @@ div#container::-webkit-scrollbar,
 div#favorites::-webkit-scrollbar, 
 .directionsBlock::-webkit-scrollbar,
 .ingredientsContainer::-webkit-scrollbar,
-.instructionsContainer::-webkit-scrollbar{
+.instructionsContainer::-webkit-scrollbar,
+.modal-display .modal-body::-webkit-scrollbar{
   display: none;
 }
 /* Recipe Card */
@@ -81,6 +82,7 @@ div#favorites::-webkit-scrollbar,
   flex-direction: column;
   overflow: auto;
   margin-top: 20px;
+  overflow: hidden;
 }
 /* .recipe h2{
   width: fit-content;
