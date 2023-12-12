@@ -50,9 +50,9 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .recipe .recipe-card img{
-    width: 150px;
+    width: 300px;
   }
 
   /* .recipe h2{
@@ -85,6 +85,13 @@
   .modal-display{
     max-width: 100%;
     padding: 20px;
+  }
+
+  .modal{
+    max-width: 100%;
+  }
+  .modal-display .directionsBlock{
+    overflow: scroll;
   }
 
 }
