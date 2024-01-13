@@ -53,10 +53,10 @@ div.foodContainer, div.favContainer{
 
 .input_field{
   display:flex;
-  justify-content:center;
+  flex-direction: column;
+  align-items: center;
   margin: 25px 0;
 }
-
 div#container, div#favorites{
   margin-top: 20px;
   max-height: 78vh;

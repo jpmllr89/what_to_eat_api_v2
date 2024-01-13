@@ -163,8 +163,13 @@ const moveCard = (id, direction) =>{
 
   }
 }
+const test = async (url) => {
+  const cat = await fetch(url);
+const catdata = await cat.json();
+console.log(catdata);
+}
 
-
+test('www.themealdb.com/api/json/v1/1/list.php?c=list')
 
 foodItem.addEventListener('click', async () => {
   for (let i = 0; i < 10; i++) {
